@@ -51,10 +51,10 @@ navigate to localhost:8000/vehicle/
 - Search for customers (user sets date of travel & budget + more properties if needed) 
 
 **Prices**
--An individual price calendar for each vehicle (day price (week price is calculated from that)) STARTED
+- An individual price calendar for each vehicle (day price (week price is calculated from that)) STARTED
 
 **Confirmations**
--Email confirmations 
+- Email confirmations 
 
 **Paymment integration**
 - Renter gives an account number 
