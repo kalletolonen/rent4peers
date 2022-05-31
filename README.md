@@ -1,7 +1,7 @@
 ## Rent4peers
 A repo for developing peer renting software with Django.
 
-![Peer renting software](1.png)
+![Peer renting software](2.png)
 
 Made by:
 https://www.linkedin.com/in/kalletolonen/
