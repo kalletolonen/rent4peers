@@ -1,0 +1,18 @@
+{% extends "vehicle/base.html" %}
+
+{% block content %}
+
+	{% for vehicle in object_list %}
+	<p>Vehicle: <a href="{{ vehicle.get_absolute_url }}">{{ vehicle.name }}</a><p/>
+	<p>Manufacturer: {{ vehicle.manufacturer }}</p>
+
+		{% if vehicle.owner == user %}
+		<p><a href="{{ vehicle.get_absolute_url }}/update">Update</a> - 
+			<a href="{{ vehicle.get_absolute_url }}/delete">Delete</a></p>
+		{% endif %}
+	<br>	
+	{% endfor %}
+	<br>
+	<a href="/vehicle/new"><button>Add a vehicle</button></a>
+
+{% endblock content %}

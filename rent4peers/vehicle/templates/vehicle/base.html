@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rent 4 peers</title>
+	</head>
+
+	<body>
+		<h1>Rent 4 peers</h1>
+		<p><a href="/vehicle">Vehicles</a> - 
+		{% if user.is_authenticated %}
+		<a href="/rent">Bookings</a> - 
+		<a href="/logout">Logout <b>{{ user.username }}</b></a> 
+
+		{% else %}
+		<a href="/accounts/login">Login</a> -
+		<a href="/register">Register</a>
+		{% endif %}
+		{% block content %}
+			Hello	
+		{% endblock content %}
+	</body>
+
+</html>

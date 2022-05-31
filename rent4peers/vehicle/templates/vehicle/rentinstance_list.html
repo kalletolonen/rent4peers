@@ -1,0 +1,46 @@
+{% extends "vehicle/base.html" %}
+
+{% block content %}
+	<h2>Bookings for {{ user }}'s vehicles</h2>
+	{% for rent in object_list %}
+		{% if user == rent.vehicle.owner %}
+		<p>Vehicle: {{rent.vehicle.name }}<p/>
+		<p>Owner: {{rent.vehicle.owner }}<p/>
+		<p>Renter: 
+			{% if user == rent.vehicle.owner and user == rent.renter %}
+			<b>Reserved for your own use</b>
+			{% else %}
+			{{ rent.renter }}
+			{% endif %}
+		<p/>
+		<p>Start: {{ rent.start }}<p/>
+		<p>End: {{ rent.end }}<p/>
+		<p>Price: {{ rent.get_total_rent }}</p>
+		<p>Booking type: {{ rent.status }}</p>
+		<p><a href="{{ rent.get_absolute_url }}/update">Update</a> - <a href="{{ rent.get_absolute_url }}/delete">Delete</a></p>
+		<br>
+		{% endif %}
+		
+	{% endfor %}
+
+	<h2>Bookings for peer vehicles</h2>
+	{% for rent in object_list %}
+		{% if user != rent.vehicle.owner and user == rent.renter %}
+			<p>Vehicle: {{rent.vehicle.name }}<p/>
+			<p>Owner: {{rent.vehicle.owner }}<p/>
+			<p>Renter: {{ rent.renter }}<p/>
+			<p>Start: {{ rent.start }}<p/>
+			<p>End: {{ rent.end }}<p/>
+			<p>Price: {{ rent.get_total_rent }}</p>
+
+			{% if user == rent.vehicle.owner %}
+		<p><a href="{{ rent.get_absolute_url }}/update">Update</a> - <a href="{{ rent.get_absolute_url }}/delete">Delete</a></p>
+		<br>
+			{% endif %}
+			<br>
+		{% endif %}
+		
+	{% endfor %}
+<a href="/rent/new">Add a booking</a>
+
+{% endblock content %}

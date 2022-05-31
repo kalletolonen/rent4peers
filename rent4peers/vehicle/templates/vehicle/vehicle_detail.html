@@ -1,0 +1,16 @@
+{% extends "vehicle/base.html" %}
+
+
+
+{% block content %}
+
+	<p>Vehicle: {{ object.name }}</a><p/>
+	<p>Manufacturer: {{ object.manufacturer }}<p/>
+	<p>Owner: {{ object.owner }}<p/>
+	<p>Description: {{ object.description }}<p/>
+	{% if object.owner == user %}
+	<a href="{{ vehicle.get_absolute_url }}/update">Update</a> - <a href="{{ vehicle.get_absolute_url }}/delete">Delete</a>
+	<br>
+	{% endif %}
+
+{% endblock content %}
