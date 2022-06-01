@@ -49,8 +49,8 @@ class RentUpdateView(LoginRequiredMixin, UpdateView):
 
     #How to get only the cars the user owns?
     def get_queryset(self):
-    	if models.Vehicle.objects.filter(owner=self.request.user):
-    	    return models.RentInstance.objects.filter()
+        if models.Vehicle.objects.filter(owner=self.request.user):
+            return models.RentInstance.objects.filter()
     
     fields = ['start','end','dayprice','status']
     success_url = "/rent"

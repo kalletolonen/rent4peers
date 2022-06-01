@@ -19,9 +19,9 @@ Business purpose:
 Software for peer rentals of RV's and other vehicles.
 
 ## How to install
-Rquirerements:
-Debian 11 or similar
-Django 3.2
+Requirements:
+* Debian 11 or similar
+* Django 3.2
 
 ```
 sudo apt-get update

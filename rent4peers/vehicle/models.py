@@ -30,9 +30,6 @@ class RentInstance(models.Model):
     def get_absolute_url(self):
         return f"/rent/{self.pk}" 
 
-    def user_is_owner(self):
-        return f"33"
-
     #Ask about changing function names and migrations!
     #How to make the default daily rate so that you can do revenue management?
     #How to make a default rent period from monday to sunday?
@@ -47,7 +44,7 @@ class RentInstance(models.Model):
         )
         
     RENT_STATUS = (
-            ('B', 'Booking'),
+            ('C', 'Confirmed'),
             ('A', 'Available'),
             ('R', 'Reserved'),
             ('M', 'Maintenance'),
