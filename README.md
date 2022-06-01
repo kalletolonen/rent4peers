@@ -39,6 +39,7 @@ navigate to localhost:8000/vehicle/
 **Models**
 - Renter can set renting terms: minimum rent period, day price & pre-set car properties (travel outside host country, pets, 230-v electricity, navigation, etc. ) STARTED
 - Comments for renter and vehicles 
+- Pictures for vehicles
 
 **User auth**
 - Login for customers & renters & admin DONE
