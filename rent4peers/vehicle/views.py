@@ -47,17 +47,16 @@ class RentCreateView(LoginRequiredMixin, CreateView):
 
 class RentUpdateView(LoginRequiredMixin, UpdateView): 
 
-    #How to get only the cars the user owns?
+    #How to get only the cars the user owns
     def get_queryset(self):
-        if models.Vehicle.objects.filter(owner=self.request.user):
-            return models.RentInstance.objects.filter()
+        return models.RentInstance.objects.filter(vehicle__owner=self.request.user)
     
     fields = ['start','end','dayprice','status']
     success_url = "/rent"
 
 class RentDeleteView(LoginRequiredMixin, DeleteView): 
     def get_queryset(self):
-    	return models.RentInstance.objects.filter()
+        return models.RentInstance.objects.filter(vehicle__owner=self.request.user)
 
 #REGISTER
 class RegisterView(CreateView):

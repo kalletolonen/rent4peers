@@ -48,6 +48,7 @@ class RentInstance(models.Model):
             ('A', 'Available'),
             ('R', 'Reserved'),
             ('M', 'Maintenance'),
+            ('P', 'Personal use'),
         )
     status = models.CharField(
             max_length=1,
