@@ -56,7 +56,7 @@ navigate to localhost:8000/vehicle/
 **Confirmations**
 - Email confirmations 
 
-**Paymment integration**
+**Payment integration**
 - Renter gives an account number 
 - Rentee makes payment -> a reservation is populated 
 - Operator takes  a cut for the service that's provided 
